@@ -11,21 +11,21 @@ public class Main {
         /*
          * Stage 5
          */
-
         String[] shipName = {"Aircraft Carrier", "Battleship", "Submarine", "Cruiser", "Destroyer"};
         int[] shipLength = {5, 4, 3, 3, 2};
         int gameFieldSize = 10;
         int xCounter = 0;
         int xCounter2 = 0;
 
-        //for PLAYER 1
-        // making and printing scheme
+        // PLAYER 1
+        // making and printing board
         char[][] scheme = makeBoard(gameFieldSize, gameFieldSize);
         char[][] schemeInTheFog = makeBoard(gameFieldSize, gameFieldSize);
         System.out.println("Player 1, place your ships on the game field");
         printBoard(scheme);
 
-        //asking for coordinates and positioning of warships
+        // asking for coordinates and positioning of warships
+
         for (int i = 0; i < shipLength.length; i++) {
             System.out.println("Enter the coordinates of the " + shipName[i] + " (" + shipLength[i] + " cells):");
             positioningBoard(scheme, shipName[i], shipLength[i]);
@@ -34,13 +34,16 @@ public class Main {
         System.out.println("Press Enter and pass the move to another player");
         pass();
 
-        //for PLAYER 2 //making and printing scheme
+        // PLAYER 2
+        // making and printing board
+
         char[][] scheme2 = makeBoard(gameFieldSize, gameFieldSize);
         char[][] schemeInTheFog2 = makeBoard(gameFieldSize, gameFieldSize);
         System.out.println("Player 2, place your ships on the game field");
         printBoard(scheme2);
 
-        //asking for coordinates and positioning of warships
+        // asking for coordinates and positioning of warships
+
         for (int i = 0; i < shipLength.length; i++) {
             System.out.println("Enter the coordinates of the " + shipName[i] + " (" + shipLength[i] + " cells):");
             positioningBoard(scheme2, shipName[i], shipLength[i]);
@@ -49,9 +52,10 @@ public class Main {
         System.out.println("Press Enter and pass the move to another player");
         pass();
 
-        //starting the game
+        // starting the game
+        // PLAYER 1
+
         do {
-            //PLAYER 1
             printBoard(schemeInTheFog2);
             System.out.println("---------------------");
             printBoard(scheme);
@@ -74,7 +78,8 @@ public class Main {
             }
             pass();
 
-            //PLAYER 2
+            // PLAYER 2
+
             printBoard(schemeInTheFog);
             System.out.println("---------------------");
             printBoard(scheme2);
